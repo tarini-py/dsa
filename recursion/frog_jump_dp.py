@@ -1,4 +1,4 @@
-'''(Medium lvl)
+'''
 https://www.geeksforgeeks.org/problems/geek-jump/1
 https://chatgpt.com/share/69483908-d4f4-8010-b7d2-5baa5e637991
 
@@ -34,7 +34,7 @@ def min_cost(height, i=0, dp = {}):
     return dp[i]
 
 
-height=[10]
+height=[20, 30, 40, 20]
 print(min_cost(tuple(height)))
 
 # better soln https://chatgpt.com/share/69483908-d4f4-8010-b7d2-5baa5e637991

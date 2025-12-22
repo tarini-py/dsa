@@ -18,20 +18,32 @@ def maze(rows :int, cols :int) -> int:
 def maze_2(rows: int, cols: int) -> int:
     return math.factorial(rows+cols-2)//(math.factorial(rows-1)*math.factorial(cols-1))
 
+
+
+
 def print_maze_path(rows: int, cols: int, i=0, j=0, path=''):
     if i==rows-1 and j==cols-1:
         print(path)
+        global total_path
+        total_path+=1
         return
     if j < cols:
         print_maze_path(rows, cols, i, j+1, path+'R')
     if i < rows:
         print_maze_path(rows, cols, i+1, j, path+'D')
-        
 
+def count_path(rows: int, cols: int, i=0, j=0) -> int:
+    if i==rows-1 and j==cols-1:
+        return 1
+    if i >= rows or j >= cols:
+        return 0
+    return count_path(rows, cols, i, j+1) + count_path(rows, cols, i+1, j)
 
+total_path=0
 r=4
 c=3
 print(maze(r,c))
 print(maze_2(r,c))
 
 print_maze_path(r,c)
+print(total_path)
