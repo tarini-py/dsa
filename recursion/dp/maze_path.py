@@ -26,10 +26,7 @@ def print_maze_path(rows: int, cols: int, i=0, j=0, path=''):
         print_maze_path(rows, cols, i, j+1, path+'R')
     if i < rows:
         print_maze_path(rows, cols, i+1, j, path+'D')
-
-    
-            
-    
+        
 
 
 r=4
