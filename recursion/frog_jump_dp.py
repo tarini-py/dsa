@@ -23,7 +23,7 @@ Total Cost = 20 + 10 = 30
 def min_cost(height, i=0, dp = {}):
     if i==len(height)-2:
         return abs(height[i]-height[i+1])
-    if i==len(height)-1:
+    if i>=len(height)-1:
         return 0
         
     if i in dp:
@@ -33,8 +33,9 @@ def min_cost(height, i=0, dp = {}):
     
     return dp[i]
 
-
+dp={}
 height=[20, 30, 40, 20]
-print(min_cost(tuple(height)))
+print(min_cost(tuple(height), dp=dp))
+print(dp)
 
 # better soln https://chatgpt.com/share/69483908-d4f4-8010-b7d2-5baa5e637991

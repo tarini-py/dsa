@@ -1,8 +1,11 @@
 import math
 def min_cost(height,k, i=0, dp = {}):
-    if i==len(height)-2:
-        return abs(height[i]-height[i+1])
-    if i==len(height)-1:
+    # if i==len(height)-2:
+    #     if i in dp:
+    #         return dp[i]
+    #     dp[i] = abs(height[i]-height[i+1])
+    #     return dp[i]
+    if i>=len(height)-1:
         return 0
         
     if i in dp:
@@ -22,4 +25,6 @@ def min_cost(height,k, i=0, dp = {}):
 
 height=[10,20,40,50,30]
 k=3
-print(min_cost(tuple(height),k))
+dp={}
+print(min_cost(tuple(height),k,dp=dp))
+print(dp)
