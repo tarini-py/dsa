@@ -14,6 +14,6 @@ def f_opt(n:int, dp:dict = {}):
     dp[n] = f_opt(n-1)+(n-1)*f_opt(n-2)
     return dp[n]
 
-n=40
+n=99
 print(f(n))
 print(f_opt(n))
