@@ -1,10 +1,5 @@
 import math
 def min_cost(height,k, i=0, dp = {}):
-    # if i==len(height)-2:
-    #     if i in dp:
-    #         return dp[i]
-    #     dp[i] = abs(height[i]-height[i+1])
-    #     return dp[i]
     if i>=len(height)-1:
         return 0
         
@@ -18,8 +13,6 @@ def min_cost(height,k, i=0, dp = {}):
         min_path = min(min_path, abs(height[i]-height[i+n])+min_cost(height,k, i+n,dp) )
     
     dp[i] = min_path
-    #dp[i] = min(abs(height[i]-height[i+1])+min_cost(height,i+1,dp),abs(height[i]-height[i+2])+min_cost(height,i+2,dp))
-    
     return dp[i]
 
 
