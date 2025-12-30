@@ -11,9 +11,9 @@ def f(amount, dp={}):
     min_count = math.inf
     for k in range(len(coins)):
         if amount >= coins[k]:
-            min_count = min(min_count, f(amount-coins[k]))
+            min_count = min(min_count, 1+f(amount-coins[k]))
     
-    dp[amount] = min_count+1
+    dp[amount] = min_count
     return dp[amount]
 
 coins = [3,7,405,436]
