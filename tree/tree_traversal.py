@@ -136,8 +136,10 @@ a.left.right = Node(5)
 
 a.right.left = Node(6)
 
-a.right.left.right = Node(7)
+#a.right.left.right = Node(7)
 
+postorder(a)
+'''
 lb=[]
 left_boundry(a.left,lb)
 print(lb)
@@ -152,6 +154,7 @@ print(lfb)
 
 print("Clock-wise boundry : ",a.data, rb,lfb[::-1],lb[::-1], a.data)
 print("Anti-Clock-wise boundry : ",a.data, lb, lfb, rb[::-1], a.data)
+'''
 # print("inoredr = ")
 # inorder(a)
 
@@ -167,3 +170,4 @@ print("Anti-Clock-wise boundry : ",a.data, lb, lfb, rb[::-1], a.data)
 # print(level_order_(a))
 
 # print(level_order_1(a))
+
