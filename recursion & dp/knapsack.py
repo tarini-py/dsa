@@ -45,11 +45,30 @@ def f_bu(n, w_cap):
             
             dp[i][j] = max_val
     
-    return dp
+    return dp[0][w_cap]
     
-            
-dp = f_bu(n, w_cap)
 
-# for i in dp:
-#     print(i)
-print(dp[0][w_cap])
+def f_bu_opt(n, w_cap):
+    # curr_row = [0] * (w_cap+1)
+    next_row = [0] * (w_cap+1)
+    
+    for i in range(n-1, -1, -1):
+        
+        curr_row = [0] * (w_cap+1)
+        
+        for j in range(1, w_cap+1):
+            max_val = next_row[j]
+            
+            if weights[i] <= j:
+                max_val = max(max_val, values[i] + next_row[j - weights[i]])
+            
+            curr_row[j] = max_val
+        
+        next_row = curr_row
+    
+    return curr_row[w_cap]
+
+
+print(f(n, w_cap))
+print(f_bu(n, w_cap))
+print(f_bu_opt(n, w_cap))
